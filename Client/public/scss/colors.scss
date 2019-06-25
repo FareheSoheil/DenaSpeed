@@ -1,0 +1,60 @@
+/*@import "etc.scss";*/
+$sidebarColor : #212529;
+$bgColor : #f5f5f5;
+
+
+/*--------------------- General Color Start ----------------------*/
+body, #page-content{
+    background: $bgColor;
+}
+#wrapper, #sidebar, .metismenu {
+    background: $sidebarColor;
+}
+/*---------------------- General Color End -----------------------*/
+
+
+
+@mixin printColors($colorName, $color){
+/*--------------------- Start #{$colorName} ----------------------*/
+    .theme-#{$colorName}.sidebar-collapse .metismenu li.conditional-bg>a{
+        background: $color;
+        color: #fff;
+    }
+    .theme-#{$colorName}{ 
+        .spinner{    
+            border: 3px solid $color;
+            border-left: 3px solid #ccc;
+        }
+        .grid-example{
+            border: 1px solid $color;
+        }
+        .double-bounce1, .double-bounce2, .scaleout, .bounces>div, .folding-cube .cube:before,
+        .header-right,
+        .metismenu a.current, .metismenu a:hover, .metismenu a:focus, .metismenu a:active {
+            background: $color;
+        }
+        .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+            background-color: $color;
+            border-color: $color;
+        }
+    }
+    .bg-#{$colorName},
+    .btn-#{$colorName}{
+        background: $color;
+    }
+/*---------------------- End #{$colorName} -----------------------*/
+}
+
+$redColor : #f55145;
+$blueColor : #14B9D6;
+$greenColor : #8cc63f;
+$orangeColor : #ffbd15;
+$darkblueColor : #13a2a6;
+$purpleColor : #9c27b0;
+
+@include printColors('blue', $blueColor);
+@include printColors('red', $redColor);
+@include printColors('green', $greenColor);
+@include printColors('orange', $orangeColor);
+@include printColors('darkblue', $darkblueColor);
+@include printColors('purple', $purpleColor);
